@@ -1,16 +1,15 @@
 @extends('frontend.layout.layout')
 
 @section('content')
-    <div class="site-blocks-cover" style="background-image: url(images/hero_1.jpg);" data-aos="fade">
+    <div class="site-blocks-cover" style="background-image: url({{ asset($slider->image) }});" data-aos="fade">
         <div class="container">
             <div class="row align-items-start align-items-md-center justify-content-end">
                 <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
-                    <h1 class="mb-2">Finding Your Perfect Shoes</h1>
+                    <h1 class="mb-2">{{ $slider->name ?? __('Merhaba') }}</h1>
                     <div class="intro-text text-center text-md-left">
-                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at
-                            iaculis quam. Integer accumsan tincidunt fringilla. </p>
+                        <p class="mb-4">{{ $slider->content ?? __('Mağazama Hoşgeldin') }}</p>
                         <p>
-                            <a href="#" class="btn btn-sm btn-primary">Shop Now</a>
+                            <a href="{{ $slider->link }}" class="btn btn-sm btn-primary">Go Product</a>
                         </p>
                     </div>
                 </div>
@@ -27,8 +26,7 @@
                     </div>
                     <div class="text">
                         <h2 class="text-uppercase">Free Shipping</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam.
-                            Integer accumsan tincidunt fringilla.</p>
+                        <p>Free shipping is available for all our products.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
@@ -37,8 +35,7 @@
                     </div>
                     <div class="text">
                         <h2 class="text-uppercase">Free Returns</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam.
-                            Integer accumsan tincidunt fringilla.</p>
+                        <p>You have up to 7 days free return right.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
@@ -47,8 +44,7 @@
                     </div>
                     <div class="text">
                         <h2 class="text-uppercase">Customer Support</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam.
-                            Integer accumsan tincidunt fringilla.</p>
+                        <p>24/7 Customer support is available.</p>
                     </div>
                 </div>
             </div>
@@ -59,7 +55,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-                    <a class="block-2-item" href="#">
+                    <a class="block-2-item" href="{{ route('womenproduct') }}">
                         <figure class="image">
                             <img src="images/women.jpg" alt="" class="img-fluid">
                         </figure>
@@ -70,7 +66,7 @@
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-                    <a class="block-2-item" href="#">
+                    <a class="block-2-item" href="{{ route('childrenproduct') }}">
                         <figure class="image">
                             <img src="images/children.jpg" alt="" class="img-fluid">
                         </figure>
@@ -81,7 +77,7 @@
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-                    <a class="block-2-item" href="#">
+                    <a class="block-2-item" href="{{ route('menproduct') }}">
                         <figure class="image">
                             <img src="images/men.jpg" alt="" class="img-fluid">
                         </figure>
@@ -180,13 +176,10 @@
             </div>
             <div class="row align-items-center">
                 <div class="col-md-12 col-lg-7 mb-5">
-                    <a href="#"><img src="images/blog_1.jpg" alt="Image placeholder"
-                            class="img-fluid rounded"></a>
+                    <img src="images/blog_1.jpg" alt="Image placeholder" class="img-fluid rounded">
                 </div>
                 <div class="col-md-12 col-lg-5 text-center pl-md-5">
-                    <h2><a href="#">50% less in all items</a></h2>
-                    <p class="post-meta mb-4">By <a href="#">Carl Smith</a> <span
-                            class="block-8-sep">&bullet;</span> September 3, 2018</p>
+                    <h2>50% less in all items</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste dolor accusantium
                         facere corporis ipsum animi deleniti fugiat. Ex, veniam?</p>
                     <p><a href="#" class="btn btn-primary btn-sm">Shop Now</a></p>
