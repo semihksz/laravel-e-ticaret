@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Frontend;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PageHomeController extends Controller
@@ -10,4 +11,6 @@ class PageHomeController extends Controller
     {
         return view('frontend.pages.index');
     }
+
+    
 }
