@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -17,7 +18,8 @@ class PageController extends Controller
     }
     public function aboutus()
     {
-        return view('frontend.pages.aboutus');
+        $abouts = About::where('status', '1')->first();
+        return view('frontend.pages.aboutus', compact('abouts'));
     }
     public function shoppingcart()
     {

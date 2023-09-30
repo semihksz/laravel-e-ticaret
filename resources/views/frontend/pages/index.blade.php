@@ -1,7 +1,7 @@
 @extends('frontend.layout.layout')
 
 @section('content')
-    <div class="site-blocks-cover" style="background-image: url({{ asset($slider->image) }});" data-aos="fade">
+    <div class="site-blocks-cover" style="background-image: url({{ asset('images/' . $slider->image) }});" data-aos="fade">
         <div class="container">
             <div class="row align-items-start align-items-md-center justify-content-end">
                 <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
@@ -22,29 +22,29 @@
             <div class="row">
                 <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
                     <div class="icon mr-4 align-self-start">
-                        <span class="icon-truck"></span>
+                        <span class="{{ $abouts->textIcon1 }}"></span>
                     </div>
                     <div class="text">
-                        <h2 class="text-uppercase">Free Shipping</h2>
-                        <p>Free shipping is available for all our products.</p>
+                        <h2 class="text-uppercase">{{ $abouts->textTitle1 }}</h2>
+                        <p>{{ $abouts->textDescription1 }}</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon mr-4 align-self-start">
-                        <span class="icon-refresh2"></span>
+                        <span class="{{ $abouts->textIcon2 }}"></span>
                     </div>
                     <div class="text">
-                        <h2 class="text-uppercase">Free Returns</h2>
-                        <p>You have up to 7 days free return right.</p>
+                        <h2 class="text-uppercase">{{ $abouts->textTitle2 }}</h2>
+                        <p>{{ $abouts->textDescription2 }}</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon mr-4 align-self-start">
-                        <span class="icon-help"></span>
+                        <span class="{{ $abouts->textIcon3 }}"></span>
                     </div>
                     <div class="text">
-                        <h2 class="text-uppercase">Customer Support</h2>
-                        <p>24/7 Customer support is available.</p>
+                        <h2 class="text-uppercase">{{ $abouts->textTitle3 }}</h2>
+                        <p>{{ $abouts->textDescription3 }}</p>
                     </div>
                 </div>
             </div>

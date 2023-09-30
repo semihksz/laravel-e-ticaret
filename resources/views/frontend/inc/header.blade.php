@@ -44,17 +44,18 @@
                 <li class="has-children">
                     <a href=" # ">Category</a>
                     <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                        <li class="has-children">
-                            <a href="#">Sub Menu</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Menu One</a></li>
-                                <li><a href="#">Menu Two</a></li>
-                                <li><a href="#">Menu Three</a></li>
-                            </ul>
-                        </li>
+                        @if (!empty($categories) && $categories->count() > 0)
+                            @foreach ($categories->where('cat_ust', null) as $ustCategory)
+                                <li class="has-children">
+                                    <a href={{ $ustCategory->slug }}>{{ $ustCategory->name }}</a>
+                                    <ul class="dropdown">
+                                        @foreach ($categories->where('cat_ust', $ustCategory->id) as $altCategory)
+                                            <li><a href={{ $altCategory->slug }}>{{ $altCategory->name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @endforeach
+                        @endif
                     </ul>
                 </li>
                 <li><a href="{{ route('aboutus') }}">About</a></li>
