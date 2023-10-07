@@ -13,13 +13,14 @@
                     </ul>
                 </div>
             </div>
+
             <div class="col-md-4 col-sm-4">
                 <div class="block-5 mb-5">
                     <h3 class="footer-heading mb-4">Contact Info</h3>
                     <ul class="list-unstyled">
-                        <li class="address">Fake Address</li>
-                        <li class="phone"><a href="tel://23923929210">Fake Phone</a></li>
-                        <li class="email">Fake email</li>
+                        <li class="address">{{ $settings['Address'] }}</li>
+                        <li class="phone"><a href="tel://23923929210">{{ $settings['Phone'] }}</a></li>
+                        <li class="email">{{ $settings['E-Mail'] }}</li>
                     </ul>
                 </div>
             </div>
